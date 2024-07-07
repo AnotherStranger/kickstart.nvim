@@ -10,7 +10,7 @@ return {
     -- parameters that are added to the request body, values are arbitrary, you can set any field:value pair here it will be passed as is to the backend
     request_body = {
       parameters = {
-        max_new_tokens = 60,
+        max_new_tokens = 128,
         temperature = 0.2,
         top_p = 0.95,
       },
@@ -35,7 +35,7 @@ return {
       version = '0.5.3',
     },
     tokenizer = nil, -- cf Tokenizer paragraph
-    context_window = 1024, -- max number of tokens for the context window
+    context_window = 8192, -- max number of tokens for the context window
     enable_suggestions_on_startup = true,
     enable_suggestions_on_files = '*', -- pattern matching syntax to enable suggestions on specific files, either a string or a list of strings
     disable_url_path_completion = false, -- cf Backend
