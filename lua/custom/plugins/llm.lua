@@ -34,7 +34,9 @@ return {
       cmd_env = nil, -- or { LLM_LOG_LEVEL = "DEBUG" } to set the log level of llm-ls
       version = '0.5.3',
     },
-    tokenizer = nil, -- cf Tokenizer paragraph
+    tokenizer = {
+      repository = 'bigcode/starcoder2-15b',
+    }, -- cf Tokenizer paragraph
     context_window = 8192, -- max number of tokens for the context window
     enable_suggestions_on_startup = true,
     enable_suggestions_on_files = '*', -- pattern matching syntax to enable suggestions on specific files, either a string or a list of strings
