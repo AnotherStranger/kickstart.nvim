@@ -608,6 +608,42 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         pyright = {},
+        ltex = {
+          settings = {
+            ltex = {
+              language = 'de-DE',
+              additionalRules = {
+                enablePickyRules = true,
+                motherTongue = 'de-DE',
+              },
+            },
+          },
+        },
+        docker_compose_language_service = {},
+        terraformls = {},
+        bashls = {},
+        texlab = {
+          bibtexFormatter = 'texlab',
+          build = {
+            args = { '-lualatex', '-pdf', '-interaction=nonstopmode', '-synctex=1', '-shell-escape', '%f' },
+            executable = 'latexmk',
+            forwardSearchAfter = false,
+            onSave = false,
+          },
+          chktex = {
+            onEdit = false,
+            onOpenAndSave = false,
+          },
+          diagnosticsDelay = 300,
+          formatterLineLength = 80,
+          forwardSearch = {
+            args = {},
+          },
+          latexFormatter = 'latexindent',
+          latexindent = {
+            modifyLineBreaks = false,
+          },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
