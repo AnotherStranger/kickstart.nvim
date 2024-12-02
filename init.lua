@@ -102,7 +102,8 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
+vim.opt.colorcolumn = '80,100'
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -607,7 +608,41 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  maxLineLength = 100,
+                },
+                black = {
+                  enabled = true,
+                },
+                pylsp_rope = {
+                  rename = true,
+                },
+                rope_rename = {
+                  enabled = false,
+                },
+                jedi_rename = {
+                  enabled = false,
+                },
+                rope_completion = {
+                  enabled = true,
+                },
+                rope_autoimport = {
+                  enabled = true,
+                  completions = {
+                    enabled = true,
+                  },
+                  code_actions = {
+                    enabled = true,
+                  },
+                },
+              },
+            },
+          },
+        },
         ltex = {
           settings = {
             ltex = {
@@ -651,7 +686,11 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        --ts_ls = {},
+        -- vuels = {},
+        volar = {
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+        },
         --
 
         lua_ls = {
@@ -683,6 +722,9 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'black',
+        'isort',
+        'volar',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -739,7 +781,7 @@ require('lazy').setup({
         python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
