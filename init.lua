@@ -646,7 +646,7 @@ require('lazy').setup({
         ltex = {
           settings = {
             ltex = {
-              language = 'de-DE',
+              language = 'en-US',
               additionalRules = {
                 enablePickyRules = true,
                 motherTongue = 'de-DE',
@@ -655,7 +655,9 @@ require('lazy').setup({
           },
         },
         docker_compose_language_service = {},
+        dockerls={},
         terraformls = {},
+        gitlab_ci_ls = {},
         bashls = {},
         texlab = {
           bibtexFormatter = 'texlab',
@@ -725,6 +727,7 @@ require('lazy').setup({
         'black',
         'isort',
         'volar',
+        'gitlab-ci-ls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
