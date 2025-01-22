@@ -664,7 +664,7 @@ require('lazy').setup({
           },
         },
         docker_compose_language_service = {},
-        dockerls={},
+        dockerls = {},
         terraformls = {},
         gitlab_ci_ls = {},
         bashls = {},
@@ -703,7 +703,11 @@ require('lazy').setup({
           filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
         },
         --
-
+        helm_ls = {
+          settings = { ['helm-ls'] = { yamlls = { path = 'yaml-language-server' } } },
+        },
+        yamlls = {},
+        trivy = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
