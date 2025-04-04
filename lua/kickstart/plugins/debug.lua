@@ -147,5 +147,28 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+    require('dap-python').setup()
+    require('dap-python').test_runner = 'pytest'
+    dap.configurations.python = {
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Launch file',
+        program = '${file}',
+      },
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Test file',
+        module = 'pytest',
+        args = { '${file}' },
+      },
+      {
+        type = 'python',
+        request = 'launch',
+        name = 'Run all Tests',
+        module = 'pytest',
+      },
+    }
   end,
 }
