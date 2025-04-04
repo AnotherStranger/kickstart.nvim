@@ -762,6 +762,7 @@ require('lazy').setup({
             modifyLineBreaks = false,
           },
         },
+        openscad_lsp = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -813,9 +814,11 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'black',
+        'clang-format',
         'isort',
         'volar',
         'gitlab-ci-ls',
+        'openscad_lsp',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -872,6 +875,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'black' },
+        openscad = { 'clang-format' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
