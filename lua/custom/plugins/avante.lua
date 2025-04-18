@@ -4,13 +4,14 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = 'ollama',
+    auto_suggestions_provider = 'ollama',
     ollama = { model = 'qwen2.5-coder' },
     behaviour = {
       --- ... existing behaviours
       enable_cursor_planning_mode = true, -- enable cursor planning mode!
     },
     rag_service = {
-      enabled = true, -- Enables the RAG service
+      enabled = false, -- Enables the RAG service
       host_mount = os.getenv 'HOME', -- Host mount path for the rag service
       provider = 'ollama', -- The provider to use for RAG service (e.g. openai or ollama)
       llm_model = 'qwen2.5-coder', -- The LLM model to use for RAG service
