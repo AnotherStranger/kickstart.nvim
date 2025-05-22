@@ -4,8 +4,19 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = 'ollama',
+    mode = 'agentic',
     auto_suggestions_provider = 'ollama',
-    ollama = { model = 'qwen2.5-coder' },
+    cursor_applying_provider = 'ollama',
+    ollama = {
+      endpoint = os.getenv 'OLLAMA_SERVER',
+      api_key_name = os.getenv 'OLLAMA_API_KEY',
+      model = os.getenv 'OLLAMA_CODE_MODEL',
+      options = {
+        temperature = 0,
+        num_ctx = 20480,
+        keep_alive = '5m',
+      },
+    },
     behaviour = {
       --- ... existing behaviours
       enable_cursor_planning_mode = true, -- enable cursor planning mode!
