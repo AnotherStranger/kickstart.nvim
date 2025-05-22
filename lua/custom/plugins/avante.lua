@@ -9,7 +9,7 @@ return {
     cursor_applying_provider = 'ollama',
     ollama = {
       endpoint = os.getenv 'OLLAMA_SERVER',
-      api_key_name = os.getenv 'OLLAMA_API_KEY',
+      api_key_name = 'OLLAMA_API_KEY',
       model = os.getenv 'OLLAMA_CODE_MODEL',
       options = {
         temperature = 0,

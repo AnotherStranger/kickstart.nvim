@@ -784,9 +784,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         --ts_ls = {},
         -- vuels = {},
-        volar = {
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-        },
         --
         helm_ls = {
           settings = { ['helm-ls'] = { yamlls = { path = 'yaml-language-server' } } },
@@ -826,9 +823,7 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'black',
-        'clang-format',
         'isort',
-        'volar',
         'gitlab-ci-ls',
         'openscad_lsp',
       })
