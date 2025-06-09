@@ -7,14 +7,18 @@ return {
     mode = 'agentic',
     auto_suggestions_provider = 'ollama',
     cursor_applying_provider = 'ollama',
-    ollama = {
-      endpoint = os.getenv 'OLLAMA_SERVER',
-      api_key_name = 'OLLAMA_API_KEY',
-      model = os.getenv 'OLLAMA_CODE_MODEL',
-      options = {
-        temperature = 0,
-        num_ctx = 20480,
-        keep_alive = '5m',
+    providers = {
+      ollama = {
+        endpoint = os.getenv 'OLLAMA_SERVER',
+        api_key_name = 'OLLAMA_API_KEY',
+        model = os.getenv 'OLLAMA_CODE_MODEL',
+        extra_request_body = {
+          options = {
+            temperature = 0,
+            num_ctx = 20480,
+            keep_alive = '5m',
+          },
+        },
       },
     },
     behaviour = {
