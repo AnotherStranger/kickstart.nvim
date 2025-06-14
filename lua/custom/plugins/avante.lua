@@ -3,13 +3,12 @@ return {
   event = 'VeryLazy',
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = 'ollama',
+    provider = 'openwebui',
     mode = 'agentic',
-    auto_suggestions_provider = 'ollama',
-    cursor_applying_provider = 'ollama',
     providers = {
-      ollama = {
-        endpoint = os.getenv 'OLLAMA_SERVER',
+      openwebui = {
+        __inherited_from = 'openai',
+        endpoint = os.getenv 'OLLAMA_SERVER' .. '/v1',
         api_key_name = 'OLLAMA_API_KEY',
         model = os.getenv 'OLLAMA_CODE_MODEL',
         extra_request_body = {

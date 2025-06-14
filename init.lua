@@ -674,7 +674,6 @@ require('lazy').setup({
         -- clangd = {},
         -- gopls = {},
         jsonls = {},
-        pyright = {},
         pylsp = {
           settings = {
             pylsp = {
@@ -710,6 +709,7 @@ require('lazy').setup({
             },
           },
         },
+        ansiblels = {},
         ltex = {
           settings = {
             ltex = {
