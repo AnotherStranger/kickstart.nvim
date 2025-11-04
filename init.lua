@@ -1055,7 +1055,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'helm', 'gotmpl' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -1122,6 +1122,11 @@ require('lazy').setup({
     },
   },
 })
-
+-- Basic Settings
+vim.opt_local.cursorcolumn = true -- Highlight the current column
+vim.opt_local.shiftwidth = 2 -- Number of spaces to use for each step of (auto)indent
+vim.opt_local.softtabstop = 2 -- Number of spaces that a <Tab> counts for while performing editing operations
+vim.opt_local.tabstop = 2 -- Number of spaces that a <Tab> in the file counts for
+vim.opt_local.expandtab = true -- Expand tab to 2 spaces
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
