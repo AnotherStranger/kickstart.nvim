@@ -103,6 +103,7 @@ vim.g.have_nerd_font = true
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
+vim.o.relativenumber = true
 vim.opt.colorcolumn = '80,100'
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -388,6 +389,11 @@ require('lazy').setup({
         --   },
         -- },
         -- pickers = {}
+        defaults = {
+          preview = {
+            treesitter = false,
+          },
+        },
         extensions = {
           ['ui-select'] = { require('telescope.themes').get_dropdown() },
         },
@@ -396,6 +402,7 @@ require('lazy').setup({
       -- Enable Telescope extensions if they are installed
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
+
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
@@ -740,6 +747,7 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'ruff',
         'python-lsp-server',
+        'markdownlint',
         'gitlab-ci-ls',
         'openscad_lsp',
         -- You can add other tools here that you want Mason to install
@@ -1035,5 +1043,6 @@ require('lazy').setup({
     },
   },
 })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
