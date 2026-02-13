@@ -20,8 +20,7 @@
 =====================================================================
 =====================================================================
 
-W      local filetypes = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
-hat is Kickstart?
+What is Kickstart?
 
   Kickstart.nvim is *not* a distribution.
 
@@ -986,6 +985,9 @@ require('lazy').setup({
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    lazy = false,
+    build = ':TSUpdate',
     config = function()
       local filetypes = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'helm', 'gotmpl' }
       require('nvim-treesitter').install(filetypes)
