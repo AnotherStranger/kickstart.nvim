@@ -989,7 +989,8 @@ require('lazy').setup({
     lazy = false,
     build = ':TSUpdate',
     config = function()
-      local filetypes = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'helm', 'gotmpl' }
+      local filetypes =
+        { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'yaml', 'helm', 'gotmpl', 'python' }
       require('nvim-treesitter').install(filetypes)
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
